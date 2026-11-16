@@ -264,19 +264,19 @@
       const page = document.createElement('div');
       page.className = `project-phase-page${phase.question ? ' has-question' : ''}`;
       page.dataset.direction = direction;
-      page.innerHTML = `<div class="phase-copy"><span class="phase-eyebrow">${escapeHTML(phase.label)}</span><h4>${escapeHTML(phase.title)}</h4>${phase.question ? `<blockquote lang="en">${escapeHTML(project.question)}</blockquote>` : ''}<p>${escapeHTML(phase.text)}</p></div><button type="button" class="phase-image story-image" aria-label="Ampliar: ${escapeHTML(project.media[phase.media].title)}">${mediaImage(project.media[phase.media],false)}<span class="image-expand" aria-hidden="true">Ampliar ↗</span></button>`;
+      page.innerHTML = `<div class="phase-copy"><h4>${escapeHTML(phase.title)}</h4>${phase.question ? `<blockquote lang="en">${escapeHTML(project.question)}</blockquote>` : ''}<p>${escapeHTML(phase.text)}</p></div><button type="button" class="phase-image story-image" aria-label="Ampliar: ${escapeHTML(project.media[phase.media].title)}">${mediaImage(project.media[phase.media],false)}<span class="image-expand" aria-hidden="true">Ampliar ↗</span></button>`;
       page.querySelector('button').addEventListener('click', () => openProjectImage(project.media,phase.media));
       stage.replaceChildren(page);
       [...tabs.children].forEach((button,i) => button.setAttribute('aria-pressed',String(i === next)));
-      item.querySelector('.phase-position').textContent = `${next + 1} / ${project.phases.length} · ${phase.label}`;
+      item.querySelector('.phase-position').textContent = `${next + 1} / ${project.phases.length}`;
       back.disabled = next === 0;
       forward.disabled = next === project.phases.length - 1;
     }
     project.phases.forEach((phase, phaseNumber) => {
       const button = document.createElement('button');
       button.type = 'button';
-      button.setAttribute('aria-label', `${project.shortLabel}: fase ${phaseNumber + 1}, ${phase.label}`);
-      button.innerHTML = `<span class="phase-tab-number">0${phaseNumber + 1}</span><span class="phase-tab-label">${escapeHTML(phase.label)}</span>`;
+      button.setAttribute('aria-label', `${project.shortLabel}: fase ${phaseNumber + 1}, ${phase.title}`);
+      button.innerHTML = `<span class="phase-tab-number">0${phaseNumber + 1}</span>`;
       button.addEventListener('click', () => selectPhase(phaseNumber));
       tabs.append(button);
     });
