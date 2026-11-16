@@ -23,14 +23,16 @@ window.portfolioContent = {
         "organization": "Business Training Company",
         "description": "Estratégia, finanças corporativas, valuation, marketing e negociação, conectando análise quantitativa a decisões de negócio.",
         "highlight": true,
-        "url": "https://www.btcompany.com.br/home-copy"
+        "url": "https://www.btcompany.com.br/home-copy",
+        "certificate": "assets/certificates/gbp.png"
       },
       {
         "id": "usp",
         "title": "Estatística e otimização para ciência de dados e pesquisa operacional",
         "organization": "Universidade de São Paulo (USP)",
         "description": "Extensão em métodos estatísticos e de otimização para modelar problemas de ciência de dados e pesquisa operacional e apoiar a tomada de decisão.",
-        "highlight": true
+        "highlight": true,
+        "certificate": "assets/certificates/usp-estatistica-otimizacao.png"
       },
       {
         "id": "dsa",
@@ -38,31 +40,15 @@ window.portfolioContent = {
         "organization": "Data Science Academy (DSA)",
         "description": "Formação que abrange análise exploratória e desenvolvimento de modelos preditivos, com aplicações locais e em nuvem.",
         "highlight": true,
-        "url": "https://www.datascienceacademy.com.br/program/formacao-cientista-de-dados-4"
+        "url": "https://www.datascienceacademy.com.br/program/formacao-cientista-de-dados-4",
+        "status": "Em andamento"
       },
       {
         "id": "quant",
         "title": "Quant Expert — Estratégias Quantitativas",
         "organization": "Finanças quantitativas",
-        "description": "Estudo de estratégias quantitativas para o mercado financeiro e uso de métodos analíticos em decisões de investimento."
-      },
-      {
-        "id": "big-data",
-        "title": "Big Data & Analytics",
-        "organization": "Dados e análise",
-        "description": "Fundamentos para explorar grandes volumes de dados e transformar análises em informações para a tomada de decisão."
-      },
-      {
-        "id": "power-bi",
-        "title": "Microsoft Power BI para Business Intelligence e Data Science",
-        "organization": "Business Intelligence",
-        "description": "Preparação, análise e visualização de dados com Power BI para comunicar indicadores e apoiar decisões."
-      },
-      {
-        "id": "crivo",
-        "title": "Crivo 4.5 Basic — Software de Políticas",
-        "organization": "Políticas de decisão",
-        "description": "Introdução ao software Crivo e à parametrização de regras e políticas para apoiar processos de decisão."
+        "description": "Estudo de estratégias quantitativas para o mercado financeiro e uso de métodos analíticos em decisões de investimento.",
+        "certificate": "assets/certificates/quant-expert.png"
       }
     ],
     "experience": [

@@ -34,7 +34,9 @@
     const courseCard = (course, compact = false) => {
       const article = document.createElement('article');
       article.className = compact ? 'highlight-card' : `course-card${course.highlight ? ' course-featured' : ''}`;
-      article.innerHTML = `${compact ? '<span class="highlight-label">FORMAÇÃO EM DESTAQUE</span>' : ''}<h4>${escapeHTML(course.title)}</h4><p class="course-organization">${escapeHTML(course.organization)}</p><p>${escapeHTML(course.description)}</p>${!compact && course.url ? `<a class="text-link" href="${escapeHTML(safeURL(course.url))}" target="_blank" rel="noopener noreferrer">Sobre o curso ↗</a>` : ''}`;
+      const certificate = course.certificate ? `<a class="text-link" href="${escapeHTML(safeURL(course.certificate))}" target="_blank" rel="noopener noreferrer" aria-label="Certificado de ${escapeHTML(course.title)} (abre em nova aba)">Certificado ↗</a>` : '';
+      const courseLink = !compact && course.url ? `<a class="text-link" href="${escapeHTML(safeURL(course.url))}" target="_blank" rel="noopener noreferrer">Sobre o curso ↗</a>` : '';
+      article.innerHTML = `${compact ? '<span class="highlight-label">FORMAÇÃO EM DESTAQUE</span>' : ''}<h4>${escapeHTML(course.title)}</h4><p class="course-organization">${escapeHTML(course.organization)}</p>${course.status ? `<span class="course-status">${escapeHTML(course.status)}</span>` : ''}<p>${escapeHTML(course.description)}</p>${certificate || courseLink ? `<div class="course-links">${certificate}${courseLink}</div>` : ''}`;
       return article;
     };
     const fillTimeline = (selector, entries) => {

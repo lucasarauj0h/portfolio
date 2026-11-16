@@ -557,3 +557,9 @@ h2 { font-size: 32px; }
   .preview-title { font-size: 15px; }
   .preview-summary { font-size: 13px; }
 }
+
+/* Links discretos de certificados e status dos cursos. */
+.course-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; }
+.course-card .course-links { margin-top: auto; padding-top: 14px; }
+.course-links .text-link { margin: 0; padding: 0; font-size: 13px; }
+.course-status { display: inline-flex; align-self: flex-start; width: fit-content; margin-bottom: 10px; padding: 3px 9px; border: 1px solid #cc092f60; border-radius: 20px; color: #ff9db3; background: #cc092f14; font-size: 12px; line-height: 1.6; }
