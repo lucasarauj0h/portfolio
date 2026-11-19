@@ -600,7 +600,7 @@ window.portfolioContent = {
       "category": "application",
       "label": "Educação · Matemática · Ensino voluntário",
       "artwork": "math",
-      "featured": false,
+      "featured": true,
       "description": "Um espaço de apoio às aulas que leciono, com conteúdos, revisão e 179 questões para os alunos praticarem matemática.",
       "tags": [
         "Educação",
@@ -655,7 +655,7 @@ window.portfolioContent = {
       "category": "application",
       "label": "Pesquisa · Inferência · Divulgação científica",
       "artwork": "charts",
-      "featured": true,
+      "featured": false,
       "description": "Uma experiência interativa que traduz minha pesquisa em um mapa didático de exploração de dados, modelos e inferência bayesiana.",
       "tags": [
         "Estatística",
