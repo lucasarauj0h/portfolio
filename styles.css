@@ -14,7 +14,15 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 17px; line-height: 1.8; -webkit-font-smoothing: antialiased; }
-body::before { content: ''; position: fixed; z-index: -1; inset: 0; background: linear-gradient(#0b0b0d65, #0b0b0da8), url("./assets/tech/bradesco-network.svg") center top / cover no-repeat; opacity: .65; pointer-events: none; }
+body { isolation: isolate; }
+.ambient-scene { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; background: radial-gradient(ellipse at 78% 48%,#3b102035,transparent 70%); }
+.ambient-network { position: absolute; inset: -4%; background: url("./assets/tech/bradesco-mesh.svg") center / cover no-repeat; opacity: .68; animation: network-drift 70s ease-in-out infinite alternate; }
+.ambient-logo { position: absolute; left: 78%; top: 48%; width: clamp(640px,80vw,1100px); aspect-ratio: 1; translate: -50% -50%; opacity: .95; filter: drop-shadow(0 0 24px #cc092f30); animation: brand-drift 60s ease-in-out infinite alternate; }
+.ambient-logo img { display: block; width: 100%; height: 100%; }
+.brand-energy-source { position: absolute; left: 48.425%; top: 34.225%; width: 1px; height: 1px; }
+#brand-energy { position: absolute; inset: 0; width: 100%; height: 100%; }
+@keyframes network-drift { from { transform: translate3d(-8px,-5px,0) scale(1); } to { transform: translate3d(12px,8px,0) scale(1.035); } }
+@keyframes brand-drift { from { transform: translate3d(-12px,12px,0) rotate(-4deg) scale(.98); } to { transform: translate3d(18px,-14px,0) rotate(3deg) scale(1.035); } }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -29,8 +37,8 @@ ul,ol { margin: 0; padding: 0; list-style: none; }
 .skip-link { position: fixed; top: -80px; left: 20px; z-index: 5; padding: 10px 20px; border-radius: 8px; background: var(--brand); }
 .skip-link:focus { top: 10px; }
 .layout { display: grid; grid-template-columns: 290px minmax(0, 1fr); align-items: start; gap: 25px; max-width: 1320px; margin: 65px auto; padding: 0 20px; }
-.sidebar, .main-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; box-shadow: 0 20px 70px #0003; }
-.sidebar { position: sticky; top: 32px; padding: 34px 26px 22px; background: linear-gradient(150deg,#1c181b 0%,#141315 65%); }
+.sidebar, .main-panel { background: rgb(21 20 22 / .8); border: 1px solid var(--border); border-radius: 22px; box-shadow: 0 20px 70px #0003; }
+.sidebar { position: sticky; top: 32px; padding: 34px 26px 22px; background: linear-gradient(150deg,rgb(28 24 27 / .88) 0%,rgb(20 19 21 / .82) 65%); }
 .identity { text-align: center; }
 .avatar { width: 170px; height: 170px; margin: 0 auto 24px; border: 2px solid var(--brand); border-radius: 30px; background: linear-gradient(145deg,#3d1c25,#211a1d 75%); display: grid; place-items: center; position: relative; overflow: hidden; box-shadow: 0 0 0 6px #cc092f0b; }
 .avatar img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 66% center; }
@@ -563,3 +571,9 @@ h2 { font-size: 32px; }
 .course-card .course-links { margin-top: auto; padding-top: 14px; }
 .course-links .text-link { margin: 0; padding: 0; font-size: 13px; }
 .course-status { display: inline-flex; align-self: flex-start; width: fit-content; margin-bottom: 10px; padding: 3px 9px; border: 1px solid #cc092f60; border-radius: 20px; color: #ff9db3; background: #cc092f14; font-size: 12px; line-height: 1.6; }
+
+@media (max-width:850px) {
+  body[data-page]:not([data-page="sobre"]) .sidebar { display: none; }
+  .ambient-logo { width: 640px; left: 60%; top: 48%; opacity: .8; }
+}
+@media (hover:none), (pointer:coarse) { #brand-energy { display: none; } }

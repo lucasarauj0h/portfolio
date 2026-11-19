@@ -441,6 +441,7 @@
     const id = requested === 'contato' ? 'estudos' : requested;
     const selected = pages.find(page => page.id === id) || pages[0];
     pages.forEach(page => { page.hidden = page !== selected; });
+    document.body.dataset.page = selected.id;
     navigation.forEach(link => {
       if (link.hash === `#${selected.id}`) link.setAttribute('aria-current','page');
       else link.removeAttribute('aria-current');
@@ -448,7 +449,8 @@
     document.title = "portfólio | lucasarauj0h";
     if (focus && activePage !== selected.id) {
       selected.querySelector('h2').focus({preventScroll: true});
-      document.querySelector('.main-panel').scrollIntoView({block: 'start'});
+      const showProfile = selected.id === 'sobre' && window.matchMedia('(max-width:850px)').matches;
+      document.querySelector(showProfile ? '.layout' : '.main-panel').scrollIntoView({block: 'start'});
     }
     activePage = selected.id;
     if (selected.id === 'estudos') scheduleJourney();
