@@ -55,7 +55,7 @@ window.portfolioContent = {
       {
         "title": "Data Scientist in Treasury",
         "organization": "Bradesco · Tesouraria",
-        "period": "Out. 2026 — atual",
+        "period": "Abr. 2025 — atual",
         "description": "Desenvolvimento e avaliação de modelos de Machine Learning e soluções de Generative AI para desafios de negócio da Tesouraria. Atuação na formulação de problemas, experimentação e avaliação de abordagens alinhadas aos objetivos da área."
       },
       {
